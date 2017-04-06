@@ -36,7 +36,7 @@ Composer [Start Slide 7]
       The most popular source location
       A listing of packages and their versions
       Facilitates repeatable installation of the package and it's dependencies
-    The Files  [Start Slide 9]
+    The Files, Dispelling the Magic  [Start Slide 9]
       composer.json -- this file lists the methods to load classes, the package names and/or locations of the packages, and in most cases a version or range of versions acceptable to install
       composer.lock -- this defines the exact version(s) installed as a result of a specific install, makes sharing or duplicating exact libraries used easier
       vendor -- the default target directory for most packages to be loaded from Packagist or other Packagist compatible package repo
@@ -45,10 +45,11 @@ Composer [Start Slide 7]
         vendor/composer/ClassLoader.php -- creates the index of classes using all kinds of filestructure and string manipulation (prefixes) black magic
         vendor/composer/autoload_classmap.php -- one of the generated lists of classes
         vendor/composer/autoload_files.php -- one of the generated lists of classes
-        vendor/composer/autoload_namespaces.php
-        vendor/Composer/autoload_psr0.php
-        vendor/composer/autoload_psr4.php
-        vendor/composer/autoload_real.php -- the file that consumes autoload_classmap.php, autoload_files.php, autoload_namespaces, autoload_psr4
+        vendor/composer/autoload_namespaces.php -- one of the generated lists of classes
+        vendor/Composer/autoload_psr0.php -- one of the generated lists of classes
+        vendor/composer/autoload_psr4.php -- one of the generated lists of classes
+        vendor/composer/autoload_real.php -- the output file of the consumed autoload_classmap.php, autoload_files.php, autoload_namespaces, & autoload_psr4
+        vendor/composer/autoload_static.php -- I'll be honest, I don't know what this file does. Google was unhelpful.
     Standard Require [Start Slide 10]
       Pulls the designated package(s) from packagist in all installs (not the default...)
     Standard Require-Dev [Start Slide 12] 
