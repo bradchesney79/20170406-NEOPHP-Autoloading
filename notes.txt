@@ -77,8 +77,7 @@ http://stackoverflow.com/a/20681770/622864
 http://www.php-fig.org/psr/psr-0/
 http://www.php-fig.org/psr/psr-4/
 https://benramsey.com/blog/2013/11/the-fall-of-pear-and-the-rise-of-composer/
-
 https://www.if-not-true-then-false.com/2010/howto-use-php-magic-constants-file-dir-function-class-method-line-namespace/
-
-
 https://getcomposer.org/doc/05-repositories.md#loading-a-package-from-a-vcs-repository
+http://blog.nikolaposa.in.rs/2017/01/16/on-structuring-php-projects/
+https://github.com/php-pds/skeleton
