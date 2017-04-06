@@ -65,15 +65,20 @@ Composer [Start Slide 7]
         github
     Local Library [Start Slide 20]
       PSR-0
+        Package file structure
       PSR-4
+        Package file structure
       PSR-4 in PSR-0 Style (I happen to like the ability to name two classes the same name-- which cannot be done in pure PSR-4)
-    
+        Package file structure
 References: [Start Slide 23]
+
 https://www.sitepoint.com/autoloading-and-the-psr-0-standard/
 http://stackoverflow.com/a/20681770/622864
 http://www.php-fig.org/psr/psr-0/
 http://www.php-fig.org/psr/psr-4/
 https://benramsey.com/blog/2013/11/the-fall-of-pear-and-the-rise-of-composer/
+
+https://www.if-not-true-then-false.com/2010/howto-use-php-magic-constants-file-dir-function-class-method-line-namespace/
 
 
 https://getcomposer.org/doc/05-repositories.md#loading-a-package-from-a-vcs-repository
