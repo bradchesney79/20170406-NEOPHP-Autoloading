@@ -1,0 +1,78 @@
+About Autoloading [Start Slide 1]
+  Out With the Old, In with the New
+    PHP 5 Magic Function (the oldest official support) [Start Slide 2]
+      __autoload()
+        Limited to a single autoload function
+        You write your own autoloading logic
+          Brilliance is a possibility
+          The opportunity for problems exists
+    PHP 5.1.2 Magic Function (the old) [Start Slide 3]
+      spl_autoload_register() via the SPL library
+        Generally loads the classes in the order registered
+        You can now have more than one autoloader in your life
+        You still write your own autoloader logic
+          The slim chance of brilliance exists
+          The opportunity for problems has been greatly expanded
+          Uses namespacing
+    PHP 5.3 (the new) [Start Slide 4]
+      Standards
+        PSR-0 [Start Slide 5]
+          Uses namespacing
+          Namespacing of the Classes is ~1:1 map to the directory structure
+        PSR-4 [Start Slide 6]
+          Uses namespacing
+          Can have a flatter filestructure
+            The top level namespace denotes the location in the filesystem
+            The full namespace designation is more for handling multiple classes named the same
+            PSR-0 style where the namespace maps to the directory structure still works
+Composer [Start Slide 7]
+  Created by Nils Adermann and Jordi Boggiano
+  Part one of a two part solution
+  PEAR is a nice comparative tool-- but it was lacking certain things people liked in the similar npm tool for NodeJS
+  Allows for autoloading libraries from disparate source locations on a project by project basis
+  Defines the package(s) to be installed or updated
+    Packagist [Start Slide 8]
+      Part two of the two part solution
+      The most popular source location
+      A listing of packages and their versions
+      Facilitates repeatable installation of the package and it's dependencies
+    The Files  [Start Slide 9]
+      composer.json -- this file lists the methods to load classes, the package names and/or locations of the packages, and in most cases a version or range of versions acceptable to install
+      composer.lock -- this defines the exact version(s) installed as a result of a specific install, makes sharing or duplicating exact libraries used easier
+      vendor -- the default target directory for most packages to be loaded from Packagist or other Packagist compatible package repo
+        {{publisher}}/{{package}}/ -- the de facto standard of initial loaded package directory structure
+        {{publisher}}/{{package}}/src/ -- the most popular place to put the meat and potatoes of the package
+        vendor/composer/ClassLoader.php -- creates the index of classes using all kinds of filestructure and string manipulation (prefixes) black magic
+        vendor/composer/autoload_classmap.php -- one of the generated lists of classes
+        vendor/composer/autoload_files.php -- one of the generated lists of classes
+        vendor/composer/autoload_namespaces.php
+        vendor/Composer/autoload_psr0.php
+        vendor/composer/autoload_psr4.php
+        vendor/composer/autoload_real.php -- the file that consumes autoload_classmap.php, autoload_files.php, autoload_namespaces, autoload_psr4
+    Standard Require [Start Slide 10]
+      Pulls the designated package(s) from packagist in all installs (not the default...)
+    Standard Require-Dev [Start Slide 12] 
+      Pulls the designated package(s) with the package(s) defined as needed for development and/or testing from packagist
+    Files [Start Slide 14]
+      Primes a file for autoloading (good for config files)
+    Classmap [Start Slide 16]
+      Applies a namespace to class files in a directory
+      Autoloads the classes found
+      Requires the autoloader to be dumped to recognize changes regarding new or deleted classes
+    VCS [Start Slide 18]
+      Several VCS tools are supported.
+        github
+    Local Library [Start Slide 20]
+      PSR-0
+      PSR-4
+      PSR-4 in PSR-0 Style (I happen to like the ability to name two classes the same name-- which cannot be done in pure PSR-4)
+    
+References: [Start Slide 23]
+https://www.sitepoint.com/autoloading-and-the-psr-0-standard/
+http://stackoverflow.com/a/20681770/622864
+http://www.php-fig.org/psr/psr-0/
+http://www.php-fig.org/psr/psr-4/
+https://benramsey.com/blog/2013/11/the-fall-of-pear-and-the-rise-of-composer/
+
+
+https://getcomposer.org/doc/05-repositories.md#loading-a-package-from-a-vcs-repository
